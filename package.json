@@ -1,0 +1,55 @@
+{
+  "name": "seo-lite",
+  "version": "0.1.0",
+  "description": "Tiny SEO helper for vanilla JS + SSR",
+  "devDependencies": {
+    "tsup": "^8.5.0",
+    "typescript": "^5.8.3"
+  },
+  "types": "dist/index.d.ts",
+  "files": ["dist", "README.md", "LICENSE"],
+  "keywords": [
+    "seo",
+    "meta",
+    "ssr",
+    "head",
+    "meta-tags",
+    "vanilla-js",
+    "typescript",
+    "opengraph",
+    "og",
+    "client-side",
+    "server-side",
+    "html"
+  ],
+  "author": "Yuri D. <kotaina217@gmail.com>",
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs",
+      "types":  "./dist/index.d.ts"
+    },
+    "./client": {
+      "import": "./dist/client/index.js",
+      "require": "./dist/client/index.cjs",
+      "types":  "./dist/client/index.d.ts"
+    },
+    "./server": {
+      "import": "./dist/server/index.js",
+      "require": "./dist/server/index.cjs",
+      "types":  "./dist/server/index.d.ts"
+    }
+  },
+  "main": "dist/index.cjs",
+  "module": "dist/index.js",
+  "scripts": {
+    "clean": "rm -rf dist",
+    "build:js": "tsup",
+    "build:types": "tsc --emitDeclarationOnly",
+    "build": "npm run clean && npm run build:js && npm run build:types"
+  }
+}
