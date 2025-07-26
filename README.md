@@ -4,9 +4,6 @@
 
 SEO-lite is a **dependency-free helper** for managing SEO tags both on the client and server side.
 
-
----
-
 ## ✨  Features
 - 🧑‍💻 **Client:** Set `<title>` and `<meta>` tags directly in the DOM
 - 🖥 **Server:** Generate SEO tag strings for SSR/templates
@@ -72,7 +69,7 @@ All functions use a shared schema for SEO tags:
   }
 ```
 
-Where is:\
+Here is:\
 ```title``` - Page title\
 ```og:description``` - Open Graph or any custom meta name\
 ```customMetaTagName``` - Any custom meta tag\
@@ -94,17 +91,14 @@ multipleAttributesTag: [
         ]
 ```
 
-### Functions
- **1. cleanUp()** \
+### Provided Functions
+- **cleanUp()** \
 ```cleanUp(schema)```\
 Removes tags matching the schema from the DOM.\
-**2. setSeo()**\
+- **setSeo()**\
 ```setSeo(schema, { isAutoClean: boolean })```\
 Sets SEO tags in the DOM. If isAutoClean is true (by default), previous tags described in schema are removed via cleanUp().\
-**3. generateSeoString()**\
+- **generateSeoString()**\
 ```generateSeoString(schema, { isPretty: boolean })```\
 Generates a string of HTML tags for SSR use.\
 When isPretty is true (by default), tags are separated by newlines (\n).
-
-
-
