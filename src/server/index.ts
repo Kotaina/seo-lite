@@ -1,6 +1,6 @@
 import { ISeoParams } from '../types'
 
-export function generateSeoString (schema: ISeoParams, { isPretty = false }: { isPretty?: boolean } = {}) {
+export function generateSeoString (schema: ISeoParams, { isPretty = true }: { isPretty?: boolean } = {}) {
     const result = []
     if (schema.title) {
         result.push(`<title>${schema.title}</title>`)
